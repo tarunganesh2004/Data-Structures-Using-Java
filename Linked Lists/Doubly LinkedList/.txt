@@ -1,0 +1,6 @@
+creation of DLL
+(A DLL has 2 references)
+
+1) Create Head and tail
+2)Create a  blank node(with nodevalue parameter) with previous and next references to null( node.next=null,node.prev=null)
+3)update head and tail references with physical location of node(to create links)(head=node,tail=node)
