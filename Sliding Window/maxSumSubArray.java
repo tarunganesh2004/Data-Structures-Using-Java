@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 class maxSum {
     public static void main(String[] args) {
         int[] a = { 1, 4, 2, 10, 2, 3, 1, 0, 20 };
@@ -20,5 +22,10 @@ class maxSum {
             maxSum = Math.max(maxSum, windowSum);
         }
         return maxSum;
+    }
+
+    public static int maxSumSubArray(ArrayList<Integer> a, int n, int k) {
+        long sum = 0;
+        
     }
 }
