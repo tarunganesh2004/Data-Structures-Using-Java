@@ -1,0 +1,6 @@
+Binary Tree is a data structure in which each node has atmost two children
+ BST,AVL, Red Black Trees etc
+
+ Types: 
+ 1) Full Binary Tree : (each node have atleast 2 children)
+ 2) Perfect Binary Tree (a binary tree in which all interior nodes have two children and all leaves have the same depth or same level)
