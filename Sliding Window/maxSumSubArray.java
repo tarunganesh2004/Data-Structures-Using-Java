@@ -26,6 +26,17 @@ class maxSum {
 
     public static int maxSumSubArray(ArrayList<Integer> a, int n, int k) {
         long sum = 0;
-        
+        for (int i = 0; i < k; i++) {
+            sum += a.get(i);
+        }
+        long max = sum;
+        for (int i = 1; i <= n - k; i++) {
+            sum = sum - a.get(i - 1);
+            sum = sum + a.get(i + k - 1);
+            if (sum > max) {
+                max = sum;
+            }
+        }
+        return max;
     }
 }
