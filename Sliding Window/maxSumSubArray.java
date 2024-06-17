@@ -37,6 +37,6 @@ class maxSum {
                 max = sum;
             }
         }
-        return max;
+        return (int)max;
     }
 }
