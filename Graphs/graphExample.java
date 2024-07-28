@@ -35,6 +35,7 @@ class graphExample {
         // }
         System.out.println(l);
         arrayToGraph(g, n);
+        anotherRepresentation(n, g);
     }
 
     // Another way to convert array to graph
@@ -60,6 +61,26 @@ class graphExample {
         for (Map.Entry<Integer, List<int[]>> entry : graph.entrySet()) {
             System.out.print("Node " + entry.getKey() + ":");
             for (int[] edge : entry.getValue()) {
+                System.out.print(Arrays.toString(edge) + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void anotherRepresentation(int n, int[][] a) {
+        List<int[]>[] graph = new List[n];
+        for (int i = 0; i < n; i++) {
+            graph[i] = new ArrayList<>();
+        }
+
+        for (int[] edge : a) {
+            int src = edge[0], dest = edge[1], weight = edge[2];
+            graph[src].add(new int[] { dest, weight });
+            graph[dest].add(new int[] { src, weight }); // for bidirectional graph
+        }
+        for (int i = 0; i < n; i++) {
+            System.out.print("Node " + i + ":");
+            for (int[] edge : graph[i]) {
                 System.out.print(Arrays.toString(edge) + " ");
             }
             System.out.println();
