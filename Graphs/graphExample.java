@@ -34,6 +34,35 @@ class graphExample {
         //     l.get(a[0]).add(new edge(a[0], a[1], a[2]));
         // }
         System.out.println(l);
-    
+        arrayToGraph(g, n);
+    }
+
+    // Another way to convert array to graph
+    public static void arrayToGraph(int[][] a, int n) {
+        Map<Integer, List<int[]>> graph = new HashMap<>();
+
+        // for multidirectional graph
+        for (int[] r : a) {
+            List<int[]> l = graph.get(r[0]);
+            if (l == null) {
+                l = new ArrayList<>();
+                graph.put(r[0], l);
+            }
+            l.add(new int[] { r[1], r[2] });
+
+            l = graph.get(r[1]);
+            if (l == null) {
+                l = new ArrayList<>();
+                graph.put(r[1], l);
+            }
+            l.add(new int[] { r[0], r[2] });
+        }
+        for (Map.Entry<Integer, List<int[]>> entry : graph.entrySet()) {
+            System.out.print("Node " + entry.getKey() + ":");
+            for (int[] edge : entry.getValue()) {
+                System.out.print(Arrays.toString(edge) + " ");
+            }
+            System.out.println();
+        }
     }
 }
