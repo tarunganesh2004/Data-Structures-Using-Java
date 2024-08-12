@@ -1,0 +1,4 @@
+A heap is a specialized tree-based data structure that satisfies the heap property. The heap property states that for a given node i:
+
+In a Max Heap, for every node i, the value of i is greater than or equal to the values of its children.
+In a Min Heap, for every node i, the value of i is less than or equal to the values of its children.
