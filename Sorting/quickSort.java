@@ -23,7 +23,7 @@ class QuickSort {
         int pivot = a[end]; // pivot element
         int i = start - 1;
 
-        for (int j = start; j <= end - 1; j++) {
+        for (int j = start; j < end ; j++) {
             if (a[j] < pivot) {
                 i++;
                 int t = a[i];
